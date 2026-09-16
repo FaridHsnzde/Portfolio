@@ -5,24 +5,16 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
         Farid Hasanzade — Software Developer
     </title>
 
-    <meta
-        name="description"
-        content="Farid Hasanzade — Software Development student at Tredu interested in web development, PHP, JavaScript, MySQL and WordPress."
-    >
+    <meta name="description"
+        content="Farid Hasanzade — Software Development student at Tredu interested in web development, PHP, JavaScript, MySQL and WordPress.">
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -35,10 +27,7 @@
 
     <nav class="navbar">
 
-        <a
-            href="#home"
-            class="logo"
-        >
+        <a href="#home" class="logo">
 
         </a>
 
@@ -61,13 +50,13 @@
                 Contact
             </a>
 
-            <a
-                href="pdf/Farid_Hasanzade_CV_P.docx.pdf.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+            <a href="pdf/Farid_Hasanzade_CV_P.docx.pdf.pdf" target="_blank" rel="noopener noreferrer">
                 CV ↗
             </a>
+
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark and light mode">
+                ☀
+            </button>
 
         </div>
 
@@ -81,10 +70,7 @@
 
     <main>
 
-        <section
-            id="home"
-            class="hero"
-        >
+        <section id="home" class="hero">
 
             <div class="hero-text">
 
@@ -115,20 +101,13 @@
 
                 <div class="buttons">
 
-                    <a
-                        href="#projects"
-                        class="button"
-                    >
+                    <a href="#projects" class="button">
                         View Projects
                     </a>
 
 
-                    <a
-                        href="pdf/Farid_Hasanzade_CV_P.docx.pdf.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="button dark"
-                    >
+                    <a href="pdf/Farid_Hasanzade_CV_P.docx.pdf.pdf" target="_blank" rel="noopener noreferrer"
+                        class="button dark">
                         View CV ↗
                     </a>
 
@@ -245,10 +224,7 @@
              ABOUT
         ========================== -->
 
-        <section
-            id="about"
-            class="section about-section"
-        >
+        <section id="about" class="section about-section">
 
 
             <div class="section-heading">
@@ -394,10 +370,7 @@
              PROJECTS
         ========================== -->
 
-        <section
-            id="projects"
-            class="section projects-section"
-        >
+        <section id="projects" class="section projects-section">
 
 
             <div class="section-heading">
@@ -531,12 +504,8 @@
                     </div>
 
 
-                    <a
-                        href="https://resepti.farhas25.treok.io/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-button"
-                    >
+                    <a href="https://resepti.farhas25.treok.io/" target="_blank" rel="noopener noreferrer"
+                        class="project-button">
                         View Project ↗
                     </a>
 
@@ -658,9 +627,7 @@
              CV
         ========================== -->
 
-        <section
-            class="cv-section"
-        >
+        <section class="cv-section">
 
 
             <div class="cv-content">
@@ -692,12 +659,8 @@
                 </p>
 
 
-                <a
-                    href="pdf/Farid_Hasanzade_CV_P.docx.pdf.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cv-button"
-                >
+                <a href="pdf/Farid_Hasanzade_CV_P.docx.pdf.pdf" target="_blank" rel="noopener noreferrer"
+                    class="cv-button">
 
                     Open My CV
 
@@ -775,3 +738,40 @@
 </body>
 
 </html>
+
+<script>
+
+    const themeToggle =
+        document.getElementById("theme-toggle");
+
+    const savedTheme =
+        localStorage.getItem("theme");
+
+
+    if (savedTheme === "light") {
+
+        document.body.classList.add("light-mode");
+
+        themeToggle.textContent = "☾";
+
+    }
+
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("light-mode");
+
+        const isLight =
+            document.body.classList.contains("light-mode");
+
+        themeToggle.textContent =
+            isLight ? "☾" : "☀";
+
+        localStorage.setItem(
+            "theme",
+            isLight ? "light" : "dark"
+        );
+
+    });
+
+</script>
